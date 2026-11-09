@@ -1,0 +1,11 @@
+.git
+.github
+.env
+data
+scripts
+*.md
+LICENSE
+Makefile
+docker-compose*.yml
+Dockerfile
+dotslash

@@ -1,0 +1,25 @@
+services:
+  dotslash:
+    image: ghcr.io/mardix/dotslash:latest
+    # To build from this folder instead of pulling the published image:
+    # build: .
+    container_name: dotslash
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      DS_USER: ${DS_USER:-admin}
+      DS_PASSWORD: ${DS_PASSWORD:?Set DS_PASSWORD in .env (copy .env.example to .env)}
+      DS_SECRET: ${DS_SECRET:-}
+      DS_TRUST_PROXY: ${DS_TRUST_PROXY:-false}
+      TZ: ${TZ:-UTC}
+    volumes:
+      - dotslash-data:/data
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    # ~15 MB in use. On the very first start a helper briefly needs ~70 MB to prepare SQLite.
+    mem_limit: 128m
+
+volumes:
+  dotslash-data:

@@ -1,0 +1,527 @@
+{
+  "format": "dotslash",
+  "version": 2,
+  "exported_at": "2026-11-08T21:00:00Z",
+  "user": "admin",
+  "prefs": {
+    "theme": "dark",
+    "accent": "",
+    "layout": "",
+    "start_on": "links",
+    "idle_minutes": 0,
+    "new_tab": true,
+    "hidden_sections": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "Home",
+      "visibility": "public",
+      "groups": [
+        {
+          "name": "Media",
+          "links": [
+            {
+              "name": "Jellyfin",
+              "url": "http://192.168.1.10:8096",
+              "icon": "jellyfin",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Jellyseerr",
+              "url": "http://192.168.1.10:5055",
+              "icon": "jellyseerr",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Sonarr",
+              "url": "http://192.168.1.10:8989",
+              "icon": "sonarr",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Radarr",
+              "url": "http://192.168.1.10:7878",
+              "icon": "radarr",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Prowlarr",
+              "url": "http://192.168.1.10:9696",
+              "icon": "prowlarr",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "qBittorrent",
+              "url": "http://192.168.1.10:8080",
+              "icon": "qbittorrent",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        },
+        {
+          "name": "Home",
+          "links": [
+            {
+              "name": "Home Assistant",
+              "url": "http://ha.lan:8123",
+              "icon": "home-assistant",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Immich",
+              "url": "http://photos.lan",
+              "icon": "immich",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Mealie",
+              "url": "http://recipes.lan:9925",
+              "icon": "mealie",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Frigate",
+              "url": "http://nvr.lan:5000",
+              "icon": "frigate",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        },
+        {
+          "name": "Productivity",
+          "links": [
+            {
+              "name": "Nextcloud",
+              "url": "http://cloud.example.com",
+              "icon": "nextcloud",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Paperless",
+              "url": "http://docs.lan:8000",
+              "icon": "paperless-ngx",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Syncthing",
+              "url": "http://192.168.1.12:8384",
+              "icon": "syncthing",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lab",
+      "name": "Lab",
+      "visibility": "shared",
+      "groups": [
+        {
+          "name": "Infrastructure",
+          "links": [
+            {
+              "name": "Proxmox",
+              "url": "http://pve.lan:8006",
+              "icon": "proxmox",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Portainer",
+              "url": "http://192.168.1.5:9443",
+              "icon": "portainer",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "TrueNAS",
+              "url": "http://nas.lan",
+              "icon": "truenas",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Nginx Proxy Manager",
+              "url": "http://192.168.1.5:81",
+              "icon": "nginx-proxy-manager",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        },
+        {
+          "name": "Network",
+          "links": [
+            {
+              "name": "Pi-hole",
+              "url": "http://pihole.lan/admin",
+              "icon": "pi-hole",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "UniFi",
+              "url": "http://192.168.1.2:8443",
+              "icon": "unifi",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "AdGuard Home",
+              "url": "http://192.168.1.3",
+              "icon": "adguard-home",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        },
+        {
+          "name": "Monitoring",
+          "links": [
+            {
+              "name": "Grafana",
+              "url": "http://grafana.lan:3000",
+              "icon": "grafana",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Prometheus",
+              "url": "http://prom.lan:9090",
+              "icon": "prometheus",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Uptime Kuma",
+              "url": "http://uptime.lan:3001",
+              "icon": "uptime-kuma",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        },
+        {
+          "name": "Dev",
+          "links": [
+            {
+              "name": "Gitea",
+              "url": "http://git.lan:3000",
+              "icon": "gitea",
+              "description": "",
+              "new_tab": true
+            },
+            {
+              "name": "Code Server",
+              "url": "http://code.lan:8443",
+              "icon": "code-server",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vault",
+      "name": "Admin",
+      "visibility": "private",
+      "groups": [
+        {
+          "name": "Accounts",
+          "links": [
+            {
+              "name": "Vaultwarden",
+              "url": "http://vault.example.com",
+              "icon": "vaultwarden",
+              "description": "",
+              "new_tab": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "type": "note",
+      "title": "Router setup",
+      "content": "Main router runs OpenWrt. DHCP hands out **.100–.199**; everything below .100 is reserved for servers.\n\n## Static leases\n- NAS — `192.168.1.10`\n- Proxmox host — `192.168.1.5`\n- Pi-hole — `192.168.1.3` (also the DNS server)\n\n## Restart Wi‑Fi without a reboot\n```\nwifi down\nwifi up\n```\n\n- [x] Back up the config to Nextcloud\n- [ ] Update to the next OpenWrt release",
+      "pinned": true,
+      "visibility": "shared",
+      "created_at": "2026-10-02T14:00:00Z",
+      "modified_at": "2026-11-08T21:40:00Z"
+    },
+    {
+      "type": "note",
+      "title": "Backup schedule",
+      "content": "Nightly at **02:30**: restic to the NAS. Sundays: a copy goes offsite.\n\n- Keep 7 daily, 4 weekly, 6 monthly\n- Test a restore on the first of every month",
+      "pinned": true,
+      "visibility": "private",
+      "created_at": "2026-08-30T10:00:00Z",
+      "modified_at": "2026-11-06T09:00:00Z"
+    },
+    {
+      "type": "note",
+      "title": "NAS upgrade plan",
+      "content": "Replace the two oldest drives first, then expand the pool.\n\n- Check SMART data before ordering\n- Buy drives from different batches",
+      "pinned": false,
+      "visibility": "private",
+      "created_at": "2026-08-02T10:00:00Z",
+      "modified_at": "2026-11-01T09:00:00Z"
+    },
+    {
+      "type": "note",
+      "title": "Ideas",
+      "content": "- A local DNS name for every service\n- Alerts from Uptime Kuma to my phone\n- Write down the power-outage recovery order",
+      "pinned": false,
+      "visibility": "private",
+      "created_at": "2026-07-11T10:00:00Z",
+      "modified_at": "2026-10-20T09:00:00Z"
+    },
+    {
+      "type": "snippet",
+      "title": "Update all containers",
+      "content": "docker compose pull\ndocker compose up -d\ndocker image prune -f",
+      "pinned": true,
+      "visibility": "shared",
+      "created_at": "2026-11-08T20:10:00Z",
+      "modified_at": "2026-11-08T20:10:00Z"
+    },
+    {
+      "type": "snippet",
+      "title": "Follow a container's logs",
+      "content": "docker compose logs -f --tail=100 jellyfin",
+      "pinned": false,
+      "visibility": "private",
+      "created_at": "2026-11-07T18:00:00Z",
+      "modified_at": "2026-11-07T18:00:00Z"
+    },
+    {
+      "type": "snippet",
+      "title": "SSH into the NAS",
+      "content": "ssh admin@192.168.1.10 -p 2222",
+      "pinned": false,
+      "visibility": "shared",
+      "created_at": "2026-11-05T12:00:00Z",
+      "modified_at": "2026-11-05T12:00:00Z"
+    },
+    {
+      "type": "snippet",
+      "title": "Check open ports",
+      "content": "sudo ss -tulpn | grep LISTEN",
+      "pinned": false,
+      "visibility": "private",
+      "created_at": "2026-11-03T09:00:00Z",
+      "modified_at": "2026-11-03T09:00:00Z"
+    },
+    {
+      "type": "snippet",
+      "title": "Restic snapshot",
+      "content": "restic -r /mnt/backup/restic backup /srv/data \\\n  --exclude-caches --tag nightly",
+      "pinned": false,
+      "visibility": "private",
+      "created_at": "2026-10-28T09:00:00Z",
+      "modified_at": "2026-10-28T09:00:00Z"
+    },
+    {
+      "type": "snippet",
+      "title": "Proxmox: list VMs and containers",
+      "content": "qm list\npct list",
+      "pinned": false,
+      "visibility": "private",
+      "created_at": "2026-10-20T09:00:00Z",
+      "modified_at": "2026-10-20T09:00:00Z"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "This week",
+      "visibility": "shared",
+      "items": [
+        {
+          "text": "Renew the domain",
+          "done": false,
+          "due": "2026-11-10"
+        },
+        {
+          "text": "Fix Jellyfin transcoding",
+          "done": false
+        },
+        {
+          "text": "Call the ISP about upload speed",
+          "done": true
+        }
+      ]
+    },
+    {
+      "title": "Monthly maintenance",
+      "visibility": "private",
+      "items": [
+        {
+          "text": "Update all containers",
+          "done": true
+        },
+        {
+          "text": "Test a backup restore",
+          "done": false,
+          "due": "2026-12-01"
+        },
+        {
+          "text": "Check SMART data",
+          "done": true
+        },
+        {
+          "text": "Review Pi-hole blocklists",
+          "done": false
+        },
+        {
+          "text": "Rotate old logs",
+          "done": false
+        }
+      ]
+    },
+    {
+      "title": "NAS upgrade",
+      "visibility": "private",
+      "items": [
+        {
+          "text": "Check SMART on all drives",
+          "done": true
+        },
+        {
+          "text": "Order two new drives",
+          "done": false,
+          "due": "2026-11-20"
+        },
+        {
+          "text": "Replace the oldest drive",
+          "done": false
+        },
+        {
+          "text": "Expand the pool",
+          "done": false
+        }
+      ]
+    }
+  ],
+  "directory": [
+    {
+      "name": "ISP support",
+      "category": "Services",
+      "phone": "+1 800 555 0142",
+      "email": "support@fiberco.example",
+      "url": "https://fiberco.example/support",
+      "notes": "Account 448-2210 · ask for tier 2",
+      "visibility": "shared"
+    },
+    {
+      "name": "Electric company",
+      "category": "Services",
+      "phone": "+1 800 555 0177",
+      "url": "https://power.example/outages",
+      "notes": "Outage line, 24/7",
+      "visibility": "shared"
+    },
+    {
+      "name": "Domain registrar",
+      "category": "Services",
+      "email": "help@registrar.example",
+      "url": "https://registrar.example",
+      "notes": "Renews Nov 10",
+      "visibility": "private"
+    },
+    {
+      "name": "Maria Lopez",
+      "category": "People",
+      "phone": "+1 555 0123",
+      "email": "maria@example.com",
+      "address": "48 Oak Street, Springfield",
+      "notes": "Landlord",
+      "visibility": "private"
+    },
+    {
+      "name": "Sam Chen",
+      "category": "People",
+      "phone": "+1 555 0188",
+      "notes": "Plumber — weekdays 8–5",
+      "visibility": "private"
+    },
+    {
+      "name": "Alex Rivera",
+      "category": "People",
+      "phone": "+1 555 0164",
+      "email": "alex@example.com",
+      "notes": "Has a spare key",
+      "visibility": "private"
+    },
+    {
+      "name": "Riverside Vet",
+      "category": "Places",
+      "phone": "+1 555 0110",
+      "address": "200 River Rd, Springfield",
+      "url": "https://riversidevet.example",
+      "notes": "Open Sat 9–1",
+      "visibility": "shared"
+    },
+    {
+      "name": "Storage unit",
+      "category": "Places",
+      "address": "7 Depot Lane, Unit 114",
+      "notes": "Gate code in Vaultwarden",
+      "visibility": "private"
+    },
+    {
+      "name": "NAS",
+      "category": "Devices",
+      "url": "http://192.168.1.10:5000",
+      "ip": "192.168.1.10",
+      "mac": "3c:7c:3f:1a:22:90",
+      "notes": "TrueNAS · 4×8 TB",
+      "visibility": "shared"
+    },
+    {
+      "name": "Proxmox host",
+      "category": "Devices",
+      "url": "https://192.168.1.5:8006",
+      "ip": "192.168.1.5",
+      "mac": "b8:ae:ed:71:4c:02",
+      "notes": "Rack shelf 2",
+      "visibility": "private"
+    },
+    {
+      "name": "Pi-hole",
+      "category": "Devices",
+      "url": "http://192.168.1.3/admin",
+      "ip": "192.168.1.3",
+      "mac": "dc:a6:32:08:5e:11",
+      "notes": "Raspberry Pi 4",
+      "visibility": "shared"
+    },
+    {
+      "name": "Router",
+      "category": "Devices",
+      "url": "http://192.168.1.1",
+      "ip": "192.168.1.1",
+      "mac": "94:83:c4:2b:10:aa",
+      "notes": "OpenWrt",
+      "visibility": "shared"
+    }
+  ],
+  "scratchpad": "Order HDDs after Black Friday sale\nRouter firmware: 23.05.5 → 24.10\nCall back ISP Tue"
+}

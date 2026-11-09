@@ -1,0 +1,91 @@
+name: Build image
+
+# Builds the Docker image for amd64 and arm64 and publishes it to
+# GitHub Container Registry as ghcr.io/<owner>/<repo>.
+#   push to main   -> :latest, :main, :sha-<short>
+#   tag v1.2.3     -> :1.2.3, :1.2, :1, :latest
+#   pull request   -> build only (nothing is pushed)
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*.*.*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Vet and build
+        run: |
+          test -z "$(gofmt -l .)" || { gofmt -l .; echo "Run gofmt"; exit 1; }
+          go vet ./...
+          go test ./...
+          CGO_ENABLED=0 go build -o /tmp/dotslash .
+      - name: Smoke test
+        run: |
+          DS_PASSWORD=test DS_DATA_DIR=/tmp/ds-data /tmp/dotslash &
+          for i in $(seq 1 20); do curl -fs http://127.0.0.1:8080/healthz && break; sleep 0.5; done
+          curl -fs http://127.0.0.1:8080/ | grep -q DotSlash
+          curl -fs http://127.0.0.1:8080/api/icons | grep -q '"svg"'
+
+  image:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh icon list
+        if: github.event_name != 'pull_request'
+        run: ./scripts/update-icons.sh || echo "::warning::Could not refresh icons.json; using the committed copy"
+
+      # No QEMU needed: the Dockerfile cross-compiles (pure Go, SQLite included).
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Image tags
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=ref,event=branch
+            type=sha,format=short
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            VERSION=${{ github.ref_type == 'tag' && github.ref_name || format('main-{0}', github.sha) }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
